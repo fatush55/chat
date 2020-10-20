@@ -10,7 +10,6 @@ const AppContainer: FC = () => {
 
     return (
         <Router>
-            App
             <Routes/>
         </Router>
     )

@@ -1,0 +1,34 @@
+.auth {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    width: 430px;
+  }
+
+  &__title {
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 33px;
+    color: #202002;
+  }
+
+  &___text {
+    margin-top: 7px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.128571px;
+    color: #202002;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+  }
+}

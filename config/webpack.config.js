@@ -163,7 +163,7 @@ module.exports = function(webpackEnv) {
       path: isEnvProduction ? paths.appBuild : undefined,
       // Add /* filename */ comments to generated require()s in the output.
       pathinfo: isEnvDevelopment,
-      // There will be one main bundle, and one file per asynchronous chunk.
+      // There will be one auth bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
       filename: isEnvProduction
         ? 'static/js/[name].[contenthash:8].js'
@@ -276,7 +276,7 @@ module.exports = function(webpackEnv) {
       // We placed these paths second because we want `node_modules` to "win"
       // if there are any conflicts. This matches Node resolution mechanism.
       // https://github.com/facebook/create-react-app/issues/253
-      modules: ['node_modules', 'src', paths.appNodeModules].concat(
+      modules: ['node_modules', paths.appNodeModules, 'src',].concat(
         modules.additionalModulePaths || []
       ),
       // These are the reasonable defaults supported by the Node ecosystem.

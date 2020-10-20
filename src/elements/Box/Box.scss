@@ -1,0 +1,14 @@
+.box {
+  width: 100%;
+  padding: 45px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.04204);
+
+  &__flex {
+    display: flex;
+  }
+
+  &__flexCenter {
+    justify-content: center;
+    align-content: center;
+  }
+}

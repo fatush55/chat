@@ -13,7 +13,7 @@ export const useRouter = () => {
     return useMemo(() => {
         return {
             push: history.push,
-            replace: location.pathname,
+            path: location.pathname,
             query: {
                 ...queryString.parse(location.search),
                 ...params,

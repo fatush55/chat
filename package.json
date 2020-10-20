@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@babel/core": "7.9.0",
+    "@polymer/font-roboto": "^3.0.2",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -14,6 +16,7 @@
     "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
+    "antd": "^4.7.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.1.0",
@@ -21,6 +24,7 @@
     "babel-preset-react-app": "^9.1.2",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "clsx": "^1.1.1",
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -153,6 +157,7 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.6",
-    "@types/redux-logger": "^3.0.8"
+    "@types/redux-logger": "^3.0.8",
+    "react-styleguidist": "^11.1.0"
   }
 }
