@@ -5,6 +5,15 @@
   box-shadow: 0 5px 5px rgba($cBobbleBlue, 0.2);
   border-radius: 12px 12px 12px 0;
   padding: 15px;
-  width: max-content;
+  width:fit-content;
   color: white;
+
+  &.my {
+    order: 2;
+    background: white;
+    border: 1px solid $cBobbleWhiteShadow;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.0220444);
+    border-radius: 12px 12px 0 12px;
+    color: $cTextDark;
+  }
 }

@@ -6,13 +6,13 @@ import './Bubbel.scss'
 
 
 type PropsType = {
-
+    myMes: boolean
 }
 
-export const Bubbel: FC<PropsType> = memo(({children}) => {
+export const Bubbel: FC<PropsType> = memo(({myMes,children}) => {
 
     return (
-        <div className={clsx('bubble')}>
+        <div className={clsx('bubble', {'my': myMes})}>
             {children}
         </div>
     )

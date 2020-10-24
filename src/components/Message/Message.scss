@@ -1,7 +1,18 @@
+@import "~scss/var";
+
 .message {
   margin: 15px 0;
   display: flex;
   flex-direction: column;
+  max-width: 70%;
+
+  &.message__right {
+    margin-left: calc(30% - 10px);
+  }
+
+  &__wrapper {
+    display: flex;
+  }
 
   &__right {
     align-items: flex-end;
@@ -17,6 +28,10 @@
     align-self: flex-end;
   }
 
+  &__avatar.my {
+    order: 2;
+  }
+
   &__date {
     font-style: normal;
     font-weight: normal;
@@ -29,7 +44,71 @@
     margin-top: 5px;
   }
 
-  &__date_my {
-    margin-left: 60px;
+  &__date {
+    margin-left: 70px;
+  }
+
+  &__date.my {
+    margin-right: 70px;
   }
 }
+
+.message__avatar {
+  &.my {
+    order: 3;
+  }
+}
+
+.message_icon {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 15px;
+
+  &__info {
+
+    svg {
+      color: $cMessageIcon;
+      position: absolute;
+      top: calc(100% - 20px);
+      left: -5px;
+    }
+  }
+
+  &__action {
+    cursor: pointer;
+
+    svg {
+      color: $cMessageIcon;
+      position: absolute;
+      top: calc(100% - 40px);
+      left: -5px;
+      transition: .3s;
+    }
+  }
+
+  &__action:hover {
+    svg {
+      color: rgba($cMessageIcon, .5);
+      transition: .3s;
+    }
+  }
+}
+
+.data_content {
+  display: flex;
+  width: auto;
+  max-width: 180px;
+  min-width: 60px;
+  flex-wrap: wrap;
+
+  &.big {
+    max-width: none;
+  }
+
+  &.my {
+    order: 1;
+  }
+}
+
+
