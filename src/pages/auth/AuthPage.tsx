@@ -1,13 +1,13 @@
 // Core
 import React, {FC, memo} from "react"
-import {Typography} from "antd"
 import {useRouter} from "../../hooks/useRouter"
-import {NavLink} from 'react-router-dom'
+// Ant
+import {Typography} from "antd"
 // Components
 import {Login} from './components/login/Login'
 import {Register} from './components/register/Register'
 // Elements
-import {Box} from '../../elements/Box/Box'
+import {Box} from 'elements/Box/Box'
 // Style
 import './AuthPage.scss'
 

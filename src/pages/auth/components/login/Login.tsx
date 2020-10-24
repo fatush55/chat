@@ -1,12 +1,13 @@
 // Core
 import React, {FC, memo} from 'react'
 import {NavLink} from 'react-router-dom'
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
+// Ant
+import { Form, Input } from 'antd'
 // Style
 import './Login.scss'
 // Elements
-import {Button} from '../../../../elements/Button/Button'
-import { Form, Input } from 'antd'
+import {Button} from 'elements/Button/Button'
 
 
 type PropsType = {

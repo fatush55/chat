@@ -3,10 +3,11 @@ import React, {FC, memo, useState} from 'react'
 import {NavLink} from 'react-router-dom'
 // Style
 import './Register.scss'
+// Ant
+import {Form, Input, Typography} from "antd"
+import {LockOutlined, UserOutlined, MailOutlined, InfoCircleTwoTone} from "@ant-design/icons"
 // Elements
-import {Button} from '../../../../elements/Button/Button'
-import {Form, Input, Typography} from "antd";
-import {LockOutlined, UserOutlined, MailOutlined, InfoCircleTwoTone} from "@ant-design/icons";
+import {Button} from 'elements/Button/Button'
 
 
 type PropsType = {

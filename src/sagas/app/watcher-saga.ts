@@ -4,7 +4,7 @@ import {all, call, takeEvery} from 'redux-saga/effects'
 // Worker
 import { workerSetUsers } from './worker-saga'
 // Actions
-import { APP_WATCH_DEF } from '../../actions/app-action'
+import { APP_WATCH_DEF } from 'actions/app-action'
 
 
 function* watchSetUsers(): SagaIterator {

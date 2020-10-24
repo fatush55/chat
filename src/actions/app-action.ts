@@ -1,5 +1,5 @@
 // Type
-import { ActionsCreatorType } from '../store'
+import { ActionsCreatorType } from 'store'
 
 
 // Watcher Action

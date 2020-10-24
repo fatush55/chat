@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 // components
 import { App } from './App'
 // Style
-import './styles/index.scss'
+import 'scss/index.scss'
 // Font
 import '@polymer/font-roboto/roboto'
 

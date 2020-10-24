@@ -1,7 +1,7 @@
 // Core
 import produce, {Draft} from 'immer'
 // Type
-import { AppActionReducerType } from '../actions/app-action'
+import { AppActionReducerType } from 'actions/app-action'
 
 
 const initialState = {

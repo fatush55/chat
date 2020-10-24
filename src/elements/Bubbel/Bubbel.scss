@@ -1,0 +1,10 @@
+@import "~scss/var";
+
+.bubble {
+  background: $cBobbleBlue;
+  box-shadow: 0 5px 5px rgba($cBobbleBlue, 0.2);
+  border-radius: 12px 12px 12px 0;
+  padding: 15px;
+  width: max-content;
+  color: white;
+}

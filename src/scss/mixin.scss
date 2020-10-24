@@ -1,0 +1,133 @@
+//Fonts
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+// Size
+@mixin size ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position ($top, $left, $right: none, $bottom: none) {
+  top: $top;
+  left: $left;
+
+  @if ($right != none) {
+    right: $right;
+  }
+
+  @if ($bottom != none) {
+    bottom: $bottom;
+  }
+}
+
+// Core screen
+@mixin screenFull ($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content
+  }
+}
+
+@mixin screenMax ($max) {
+  @media (max-width: $max) {
+    @content
+  }
+}
+
+@mixin screenMin ($min) {
+  @media (min-width: $min) {
+    @content
+  }
+}
+
+// Most popular screen
+@mixin screenMobile ($type: full, $min: 320px, $max: 768px) {
+
+  @if ($type == full) {
+    @include screenFull($min, $max) {
+      @content
+    }
+  }
+
+  @if ($type == max) {
+    @include screenMax($max) {
+      @content
+    }
+  }
+
+  @if ($type == min) {
+    @include screenMin($min) {
+      @content
+    }
+  }
+}
+
+@mixin screenTab ($type: full, $min: 769px, $max: 1024) {
+
+  @if ($type == full) {
+    @include screenFull($min, $max) {
+      @content
+    }
+  }
+
+  @if ($type == max) {
+    @include screenMax($max) {
+      @content
+    }
+  }
+
+  @if ($type == min) {
+    @include screenMin($min) {
+      @content
+    }
+  }
+}
+
+@mixin screenLaptop ($type: full, $min: 1024px, $max: 1440px) {
+
+  @if ($type == full) {
+    @include screenFull($min, $max) {
+      @content
+    }
+  }
+
+  @if ($type == max) {
+    @include screenMax($max) {
+      @content
+    }
+  }
+
+  @if ($type == min) {
+    @include screenMin($min) {
+      @content
+    }
+  }
+}
+
+@mixin screenDesktop ($type: full, $min: 1440px, $max: 2560px) {
+
+  @if ($type == full) {
+    @include screenFull($min, $max) {
+      @content
+    }
+  }
+
+  @if ($type == max) {
+    @include screenMax($max) {
+      @content
+    }
+  }
+
+  @if ($type == min) {
+    @include screenMin($min) {
+      @content
+    }
+  }
+}

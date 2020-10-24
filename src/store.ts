@@ -2,11 +2,11 @@
 import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 // Middleware
-import { middleware, sagaMiddleware } from './middleware'
+import { middleware, sagaMiddleware } from 'middleware'
 // Reducer
-import { rootReducer } from './reducers/root-reducer'
+import { rootReducer } from 'reducers/root-reducer'
 // Saga
-import { rootSaga } from './sagas/root-saga'
+import { rootSaga } from 'sagas/root-saga'
 
 
 type RootReducer = typeof rootReducer
