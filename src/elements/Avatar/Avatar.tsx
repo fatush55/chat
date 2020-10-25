@@ -10,6 +10,8 @@ type PropsType = {
     url: string
     size: number
     className?: string
+    online?: boolean
+    active?: boolean
 }
 
-export const Avatar: FC<PropsType> = memo(({url, size}) => <div className={clsx('avatar')} style={{backgroundImage: `url(${url})`, width: size, height: size}}/>)
+export const Avatar: FC<PropsType> = memo(({url, size, online, active = false}) => <div className={clsx('avatar', {'online': online, 'active': active})} data-dane={3} style={{backgroundImage: `url(${url})`, width: size, height: size}}/>)

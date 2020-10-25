@@ -7,7 +7,7 @@ import {FormAuthErrorsType} from 'types/auth-types'
 
 const initialState = {
     loadingForm: false,
-    isAuth: false,
+    isAuth: true,
     errors: null as FormAuthErrorsType | null
 }
 

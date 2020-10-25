@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom'
 // Style
 import './MainPage.scss'
 // Components
-import {Message} from 'components/Message/Message'
+import {Message} from 'components/message/Message'
+import {LeftPanel} from './components/left-panel/LeftPanel'
 // Hook
 import { useMainPageEf } from './useMainPageEf'
 
@@ -23,7 +24,7 @@ export const MainPage: FC<PropsType> = memo(() => {
                <div className={'left_panel__topbar_wrapper'}>
                    top left panel
                </div>
-               left panel
+               <LeftPanel/>
            </div>
            <div className={'right_panel'}>
                <div className={'right_panel__topbar_wrapper'}>

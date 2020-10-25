@@ -1,6 +1,24 @@
+@import "~scss/var";
+
 .avatar {
+  position: relative;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+
+  &.online:after {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: calc(100% - 13px);
+    top: calc(100% - 9px);
+    content: attr(data-done);
+    border-radius: 50%;
+    background-color: #00C980;
+    border: 3px solid white;
+  }
+
+  &.online.active:after {
+    border: 3px solid $cCardUserActive;
+  }
 }
