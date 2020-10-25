@@ -6,6 +6,7 @@ import { actionsMain } from 'actions/main-action'
 // Api
 import { dataMessage } from 'api/main-api'
 
+
 export function* workerSetMessages(): SagaIterator {
 
     yield put(actionsMain.set_message(dataMessage))

@@ -1,5 +1,6 @@
 // Core
 import React, {FC, memo} from 'react'
+import { Redirect } from 'react-router-dom'
 // Style
 import './MainPage.scss'
 // Components
@@ -12,7 +13,9 @@ type PropsType = {
 }
 
 export const MainPage: FC<PropsType> = memo(() => {
-    const {MessageData} = useMainPageEf()
+    const {MessageData, isAuth} = useMainPageEf()
+
+    if (!isAuth) return  <Redirect to={'/login'} />
 
     return (
        <div className={'panel_container'}>
@@ -28,16 +31,7 @@ export const MainPage: FC<PropsType> = memo(() => {
                </div>
                <div className={'right_panel__message_wrapper'}>
                    {
-                       MessageData.map(elem => (
-                           <Message
-                               data={elem.data}
-                               reading={elem.reading}
-                               myMes={elem.myMes}
-                               urlAvatar={elem.url}
-                               content={elem.content}
-                               date={new Date(elem.date.year, elem.date.month, elem.date.day, elem.date.hours, elem.date.minutes, elem.date.second)}
-                           />
-                       ))
+                       MessageData.map(elem => (<Message key={elem.id} { ...elem}/>))
                    }
                </div>
                <div className={'right_panel__footer_wrapper'}>

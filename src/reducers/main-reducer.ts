@@ -2,11 +2,11 @@
 import produce, {Draft} from 'immer'
 // Type
 import { MainActionReducerType } from 'actions/main-action'
-import {Message} from 'types/main-type'
+import {MessageType} from 'types/main-type'
 
 
 const initialState = {
-    messages: [] as Array<Message>
+    messages: [] as Array<MessageType>
 }
 
 type InitialStateType = typeof initialState

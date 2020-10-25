@@ -1,6 +1,7 @@
 // Core
 import React, {FC, memo} from "react"
 import {useRouter} from "../../hooks/useRouter"
+import {Redirect} from "react-router-dom"
 // Ant
 import {Typography} from "antd"
 // Components
@@ -10,6 +11,8 @@ import {Register} from './components/register/Register'
 import {Box} from 'elements/Box/Box'
 // Style
 import './AuthPage.scss'
+// Hooks
+import {useAuthPageEf} from './useAuthPageEf'
 
 
 type PropsType = {
@@ -18,6 +21,9 @@ type PropsType = {
 
 export const AuthPage: FC<PropsType> = memo(() => {
     const {path} = useRouter()
+    const {isAuth} = useAuthPageEf()
+
+    if (isAuth) return  <Redirect to={'/'} />
 
     return (
         <div className='auth'>

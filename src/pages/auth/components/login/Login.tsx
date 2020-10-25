@@ -1,42 +1,76 @@
 // Core
 import React, {FC, memo} from 'react'
 import {NavLink} from 'react-router-dom'
-import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { LockOutlined, MailOutlined } from '@ant-design/icons'
+import {Formik} from 'formik'
+import * as Yup from 'yup'
 // Ant
-import { Form, Input } from 'antd'
+import { Form, Input } from 'formik-antd'
 // Style
 import './Login.scss'
+// Components
+import {ErrorsFormAuth} from "../ErrorsFormAuth"
 // Elements
 import {Button} from 'elements/Button/Button'
+// Hooks
+import { useLoginEf } from './useLoginEf'
+// Type
+import {FormLoginType} from 'types/auth-types'
 
 
 type PropsType = {
     children?: never
 }
 
+const SignupSchema = Yup.object().shape({
+    email: Yup.string()
+        .email('Invalid email')
+        .required('Required'),
+    password: Yup.string()
+        .min(5, 'Too Short')
+        .max(50, 'Too Long')
+        .required('Required'),
+})
+
 export const Login: FC<PropsType> = memo(() => {
+    const {handlerSubmit} = useLoginEf()
 
     return (
         <div className='login'>
-            <Form>
-                <Form.Item
-                    name="username"
-                    rules={[{ required: true, message: 'Please input your username!' }]}
-                >
-                    <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username"  size={'large'} />
-                </Form.Item>
+            <Formik
+                initialValues={{
+                    email: '',
+                    password: ''
+                }}
+                onSubmit={handlerSubmit}
+                validationSchema={SignupSchema}
+            >
+                <Form>
+                    <Form.Item name='email'>
+                        <Input
+                            prefix={<MailOutlined className="site-form-item-icon icon-from" />}
+                            size={'large'}
+                            name='email'
+                            placeholder='E-mail'
+                        />
+                    </Form.Item>
 
-                <Form.Item
-                    name="password"
-                    rules={[{ required: true, message: 'Please input your password!' }]}
-                >
-                    <Input.Password prefix={<LockOutlined className="site-form-item-icon" />} placeholder="Password" size={'large'} />
-                </Form.Item>
+                    <Form.Item name='password'>
+                        <Input.Password
+                            prefix={<LockOutlined className="site-form-item-icon icon-from" />}
+                            size={'large'}
+                            name='password'
+                            placeholder='Password'
+                        />
+                    </Form.Item>
 
-                <Form.Item >
-                    <Button sizeW={'full'} type={"primary"} className={''} content={'ВОЙТИ В АККАУНТ'} sizeH={"large"}/>
-                </Form.Item>
-            </Form>
+                    <Form.Item name={'btn'} >
+                        <Button sizeW={'full'} type={"primary"} content={'ВОЙТИ В АККАУНТ'} sizeH={"large"} htmlType="submit" />
+                    </Form.Item>
+
+                    <ErrorsFormAuth/>
+                </Form>
+            </Formik>
 
             <div className='login__link'>
                 <NavLink to={'/register'}>

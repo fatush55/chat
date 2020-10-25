@@ -16,12 +16,12 @@ export type DataType = {
     img?: Array<Img>
 }
 
-export type Message = {
+export type MessageType = {
     id: number
     url: string
     content?: string
     reading: boolean
     myMes: boolean
     date: DateType
-    data: DataType | {}
+    data: DataType
 }

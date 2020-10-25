@@ -5,6 +5,8 @@ import clsx from 'clsx'
 import { Button as AntButton } from 'antd'
 // Style
 import './Button.scss'
+// Type
+import { ButtonHTMLType } from 'antd/lib/button/button'
 
 
 type PropsType = {
@@ -15,11 +17,11 @@ type PropsType = {
     type: 'primary' | 'dashed' | 'text' | 'link'
     sizeH?: 'large' | 'small'
     sizeW?: 'full'
-
+    htmlType?: ButtonHTMLType
 }
 
 export const Button: FC<PropsType> = (props) => {
-    const {className, content, sizeH, sizeW, ...oldProps} = props
+    const {className, content, sizeH, sizeW, htmlType = 'button', ...oldProps} = props
 
     return (
         <AntButton
@@ -31,6 +33,7 @@ export const Button: FC<PropsType> = (props) => {
                     {'button__large': sizeH === 'large', 'button__full': sizeW === 'full'}
                 )
             }
+            htmlType={htmlType}
         >
             {content}
         </AntButton>

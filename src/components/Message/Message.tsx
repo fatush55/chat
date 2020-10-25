@@ -1,8 +1,6 @@
 // Core
 import React, {FC, memo} from 'react'
 import clsx from 'clsx'
-import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict'
-import ruLocation from 'date-fns/locale/ru'
 // Ant
 import { ExclamationCircleOutlined, CheckCircleOutlined, EllipsisOutlined } from '@ant-design/icons'
 // Style
@@ -12,20 +10,16 @@ import { Avatar } from 'elements/Avatar/Avatar'
 import { Bubbel } from 'elements/Bubbel/Bubbel'
 import { ItemImg } from 'elements/ItemImg/ItemImg'
 // Type
-import { DataType } from 'types/main-type'
+import { MessageType } from 'types/main-type'
+import {useTime} from "../../hooks/useTime";
 
 
 type PropsType = {
     children?: never
-    content?: string
-    date: Date
-    myMes?: boolean
-    reading?: boolean
-    urlAvatar: string
-    data: DataType
 }
 
-export const Message: FC<PropsType> = memo(({date, content, myMes = false, urlAvatar, reading = false, data}) => {
+export const Message: FC<PropsType & MessageType> = memo(({date, content, myMes = false, url, reading = false, data}) => {
+    const time = useTime(date)
 
     return (
         <div className={clsx('message', {'message__right': myMes})}>
@@ -47,7 +41,7 @@ export const Message: FC<PropsType> = memo(({date, content, myMes = false, urlAv
                     )
                 }
                <div className={clsx('message__avatar', {'my': myMes})}>
-                   <Avatar size={40} url={urlAvatar}/>
+                   <Avatar size={40} url={url}/>
                </div>
                 {
                     content && (
@@ -67,7 +61,7 @@ export const Message: FC<PropsType> = memo(({date, content, myMes = false, urlAv
                 }
             </div>
             <span className={clsx('message__date', {'my': myMes})}>
-                {formatDistanceToNowStrict(date, {addSuffix: true, locale: ruLocation})}
+                {time}
             </span>
         </div>
     )
