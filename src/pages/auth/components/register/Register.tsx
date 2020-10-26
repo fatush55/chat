@@ -9,7 +9,7 @@ import { Form, Input } from 'formik-antd'
 import {Typography} from "antd"
 import {LockOutlined, UserOutlined, MailOutlined, InfoCircleTwoTone} from "@ant-design/icons"
 // Elements
-import {Button} from 'elements/Button/Button'
+import {Button} from 'elements/button/Button'
 import {Formik} from "formik"
 import { ErrorsFormAuth } from '../ErrorsFormAuth'
 // Hooks

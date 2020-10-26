@@ -104,3 +104,30 @@ export const dataMessage = [
         }
     },
 ]
+
+export const cardUsersList = [
+    {
+        id: 1,
+        online: false,
+        name: 'Kosta Zuravel',
+        lastMessage: 'watch my show',
+        newMessage: 1,
+        url: 'https://www.kinonews.ru/insimgs/2019/newsimg/newsimg87089.jpg',
+    },
+    {
+        id: 2,
+        online: true,
+        name: 'Karina Cheremis',
+        lastMessage: 'hello, how are you ?',
+        newMessage: 1,
+        url: 'https://www.kinonews.ru/insimgs/2019/newsimg/newsimg87089.jpg',
+    },
+    {
+        id: 3,
+        online: false,
+        name: 'Oleg Novojilov',
+        lastMessage: 'very cool',
+        newMessage: 1,
+        url: 'https://www.kinonews.ru/insimgs/2019/newsimg/newsimg87089.jpg',
+    }
+]

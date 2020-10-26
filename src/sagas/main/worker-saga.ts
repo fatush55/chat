@@ -4,11 +4,11 @@ import { SagaIterator } from 'redux-saga'
 // Action
 import { actionsMain } from 'actions/main-action'
 // Api
-import { dataMessage } from 'api/main-api'
+import { dataMessage, cardUsersList } from 'api/main-api'
 
 
 export function* workerSetMessages(): SagaIterator {
 
     yield put(actionsMain.set_message(dataMessage))
-
+    yield put(actionsMain.set_card_users(cardUsersList))
 }

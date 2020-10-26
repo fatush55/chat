@@ -25,3 +25,12 @@ export type MessageType = {
     date: DateType
     data: DataType
 }
+
+export type CardsUserType = {
+    id: number
+    online?: boolean
+    name: string
+    lastMessage?: string
+    newMessage?: number
+    url?: string
+}

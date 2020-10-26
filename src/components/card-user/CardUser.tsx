@@ -4,31 +4,34 @@ import clsx from "clsx";
 // Style
 import './CardUser.scss'
 // Elements
-import { Avatar } from 'elements/Avatar/Avatar'
+import { Avatar } from 'elements/avatar/Avatar'
 import { Badge } from 'elements/badge/Badge'
+// Type
+import { CardsUserType } from 'types/main-type'
 
 
 type PropsType = {
     children?: never
-    active?: boolean
+    handlerActive: (id: number) => void
+    active: boolean
 }
 
-export const CardUser: FC<PropsType> = memo(({active = false}) => {
+export const CardUser: FC<PropsType & CardsUserType> = memo(({handlerActive, id, active, online = false, name, lastMessage = '', newMessage, url}) => {
 
     return (
-        <div className={clsx('card-user', {'card-user_active': active})}>
+        <div className={clsx('card-user', {'card-user_active': active})} onClick={() => handlerActive(id)}>
             <div>
                 <Avatar
-                    url={'https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/anthony-brebion.jpg'}
+                    url={url ? url : ''}
                     size={40}
-                    online={true}
+                    online={online}
                     active={active}
                 />
             </div>
             <div className={'card-user__content'}>
                 <div className={'card-user__top'}>
                     <h6>
-                        Ян Борисович Кум
+                        {name}
                     </h6>
                     <p>
                         Сейчас
@@ -36,11 +39,13 @@ export const CardUser: FC<PropsType> = memo(({active = false}) => {
                 </div>
                 <div className={'card-user__bottom'}>
                     <p>
-                        Я ща стрепсилс тебе куплю, п…
+                        {lastMessage}
                     </p>
                 </div>
                 <div className={'card-user__info'}>
-                    <Badge  content={3}/>
+                    {
+                        newMessage && <Badge content={newMessage} />
+                    }
                 </div>
             </div>
         </div>

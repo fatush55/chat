@@ -2,10 +2,11 @@
 import produce, {Draft} from 'immer'
 // Type
 import { MainActionReducerType } from 'actions/main-action'
-import {MessageType} from 'types/main-type'
+import {MessageType, CardsUserType} from 'types/main-type'
 
 
 const initialState = {
+    cardsUser: [] as Array<CardsUserType>,
     messages: [] as Array<MessageType>
 }
 
@@ -15,8 +16,11 @@ export const mainReducer = (state: InitialStateType = initialState, action: Main
     return produce(state, (draft: Draft<InitialStateType>) => {
         switch (action.type) {
             // Sync
-            case "APP_DEFAULT":
+            case "MAIN_SET_MESSAGE":
                 draft.messages = action.payload.message
+                break
+            case "MAIN_SET_CARD_USERS":
+                draft.cardsUser = action.payload.users
                 break
             // Async
             case "MAIN_WATCH_LOAD_PAGE": return state

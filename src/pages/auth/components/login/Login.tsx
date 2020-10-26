@@ -11,7 +11,7 @@ import './Login.scss'
 // Components
 import {ErrorsFormAuth} from "../ErrorsFormAuth"
 // Elements
-import {Button} from 'elements/Button/Button'
+import {Button} from 'elements/button/Button'
 // Hooks
 import { useLoginEf } from './useLoginEf'
 // Type

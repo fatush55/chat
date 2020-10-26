@@ -8,7 +8,7 @@ import {Typography} from "antd"
 import {Login} from './components/login/Login'
 import {Register} from './components/register/Register'
 // Elements
-import {Box} from 'elements/Box/Box'
+import {Box} from 'elements/box/Box'
 // Style
 import './AuthPage.scss'
 // Hooks

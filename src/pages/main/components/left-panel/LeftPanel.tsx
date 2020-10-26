@@ -1,5 +1,5 @@
 // Core
-import React, {FC, memo} from 'react'
+import React, {FC, memo, useState} from 'react'
 // Style
 import './LeftPanel.scss'
 // Hooks
@@ -13,7 +13,7 @@ type PropsType = {
 }
 
 export const LeftPanel: FC<PropsType> = memo(() => {
-    const {} = useLeftPanelEf()
+    const {cardsUser,  active, handlerActive,} = useLeftPanelEf()
 
     return (
         <div className={'cont-left-panel'}>
@@ -23,8 +23,21 @@ export const LeftPanel: FC<PropsType> = memo(() => {
                 </div>
             </div>
             <div className={'cont-left-panel__cards'}>
-                <CardUser active={true}/>
-                <CardUser/>
+                {
+                    cardsUser.map(elem => (
+                        <CardUser
+                            key={elem.id}
+                            id={elem.id}
+                            active={active === elem.id}
+                            name={elem.name}
+                            url={elem.url}
+                            online={elem.online}
+                            newMessage={elem.newMessage}
+                            lastMessage={elem.lastMessage}
+                            handlerActive={handlerActive}
+                        />
+                    ))
+                }
             </div>
         </div>
     )

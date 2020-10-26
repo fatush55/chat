@@ -1,11 +1,24 @@
 // Core
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+// Selectors
+import {getCardsUser} from "selectors/main-selector"
 
 
 export const useLeftPanelEf = () => {
     const dispatch = useDispatch()
-    //const def = useSelector()
+    const cardsUser = useSelector(getCardsUser)
 
-    return {}
+    const [active, setActive] = useState(1)
+
+    const handlerActive = (id: number) => {
+        console.log(id)
+        setActive(id)
+    }
+
+    return {
+        cardsUser,
+        active,
+        handlerActive,
+    }
 }

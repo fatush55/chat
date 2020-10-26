@@ -6,9 +6,9 @@ import { ExclamationCircleOutlined, CheckCircleOutlined, EllipsisOutlined } from
 // Style
 import './Message.scss'
 // Elements
-import { Avatar } from 'elements/Avatar/Avatar'
-import { Bubbel } from 'elements/Bubbel/Bubbel'
-import { ItemImg } from 'elements/ItemImg/ItemImg'
+import { Avatar } from 'elements/avatar/Avatar'
+import { Bubbel } from 'elements/bubbel/Bubbel'
+import { ItemImg } from 'elements/item-img/ItemImg'
 // Type
 import { MessageType } from 'types/main-type'
 import {useTime} from "../../hooks/useTime";
