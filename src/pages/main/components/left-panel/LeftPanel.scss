@@ -21,7 +21,24 @@
 }
 
 .search-left-panel {
+  position: relative;
   height: 35px;
   width: 90%;
   background-color: $cSearchContainer;
+
+  &__input {
+    padding-left: 32px !important;
+    color: $cIconDefault !important;
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 20px;
+    top: 7px;
+    left: 10px;
+
+    svg {
+      color: $cIconDefault;
+    }
+  }
 }

@@ -6,6 +6,8 @@ import './MainPage.scss'
 // Components
 import {Message} from 'components/message/Message'
 import {LeftPanel} from './components/left-panel/LeftPanel'
+import {LeftPanelHead} from './components/left-panel-head/LeftPanelHead'
+import {RightPanelHead} from './components/right-panel-head/RightPanelHead'
 // Hook
 import { useMainPageEf } from './useMainPageEf'
 
@@ -22,13 +24,13 @@ export const MainPage: FC<PropsType> = memo(() => {
        <div className={'panel_container'}>
            <div className={'left_panel'}>
                <div className={'left_panel__topbar_wrapper'}>
-                   top left panel
+                   <LeftPanelHead/>
                </div>
                <LeftPanel/>
            </div>
            <div className={'right_panel'}>
                <div className={'right_panel__topbar_wrapper'}>
-                   top right panel
+                   <RightPanelHead/>
                </div>
                <div className={'right_panel__message_wrapper'}>
                    {

@@ -6,7 +6,7 @@
 }
 
 .left_panel {
-  width: 20%;
+  width: 300px;
 
   &__topbar_wrapper {
     height: 61px;
@@ -16,7 +16,7 @@
 
 .right_panel {
   position: relative;
-  width: 80%;
+  width: calc(100% - 300px);
   border: 1px solid $cBobbleWhiteShadow;
 
   &__topbar_wrapper {

@@ -1,0 +1,44 @@
+@import "~scss/var";
+
+.left-top-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+
+  svg {
+    font-size: 16px;
+    color:  rgba($cTextDark, .8);
+    transition: .3s;
+  }
+
+  &__dialog {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: rgba($cTextDark, .65);
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+  }
+
+  &__edit {
+    cursor: pointer;
+  }
+
+  &__edit:hover {
+    svg {
+      transition: .3s;
+      color: $cIconActive;
+    }
+  }
+
+
+}
