@@ -8,6 +8,7 @@ import {Message} from 'components/message/Message'
 import {LeftPanel} from './components/left-panel/LeftPanel'
 import {LeftPanelHead} from './components/left-panel-head/LeftPanelHead'
 import {RightPanelHead} from './components/right-panel-head/RightPanelHead'
+import {MessagePanel} from './components/message-panel/MessagePanel'
 // Hook
 import { useMainPageEf } from './useMainPageEf'
 
@@ -39,7 +40,7 @@ export const MainPage: FC<PropsType> = memo(() => {
                </div>
                <div className={'right_panel__footer_wrapper'}>
                    <div className={'field__wrapper'}>
-                       text
+                       <MessagePanel/>
                    </div>
                </div>
            </div>

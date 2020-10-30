@@ -1,0 +1,61 @@
+@import "~scss/var";
+
+.message-panel {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__area {
+    width: 80%;
+
+    textarea {
+      overflow : auto;
+      padding-right: 30px;
+      color: rgba($cTextDark, .5);
+      resize: none;
+    }
+
+    textarea::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  %_icon {
+    position: absolute;
+
+    svg {
+      font-size: 18px;
+      color: $cIconDefault;
+      transition: .3s;
+   }
+
+    &:hover {
+      svg {
+        color: $cIconActive;
+        transition: .3s;
+      }
+    }
+  }
+
+  &__icon_smile {
+    @extend %_icon;
+    left: calc(0% + 50px);
+  }
+
+  &__icon_camera {
+    @extend %_icon;
+    left: calc(100% - 65px);
+  }
+
+  &__icon_audio {
+    @extend %_icon;
+    left: calc(100% - 105px);
+  }
+
+  &__icon_send {
+    @extend %_icon;
+    left: calc(100% - 105px);
+  }
+}
