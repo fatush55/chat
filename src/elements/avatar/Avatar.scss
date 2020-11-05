@@ -2,6 +2,11 @@
 
 .avatar {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: white;
   background-position: center;
   background-size: cover;
   border-radius: 50%;

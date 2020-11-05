@@ -9,6 +9,8 @@ import './Message.scss'
 import { Avatar } from 'elements/avatar/Avatar'
 import { Bubbel } from 'elements/bubbel/Bubbel'
 import { ItemImg } from 'elements/item-img/ItemImg'
+// Components
+import {AudiMessage} from 'components/audi-message/AudiMessage'
 // Type
 import { MessageType } from 'types/main-type'
 import {useTime} from "../../hooks/useTime";
@@ -18,7 +20,7 @@ type PropsType = {
     children?: never
 }
 
-export const Message: FC<PropsType & MessageType> = memo(({date, content, myMes = false, url, reading = false, data}) => {
+export const Message: FC<PropsType & MessageType> = memo(({date, content, myMes = false, url, reading = false, data, name}) => {
     const time = useTime(date)
 
     return (
@@ -41,7 +43,7 @@ export const Message: FC<PropsType & MessageType> = memo(({date, content, myMes 
                     )
                 }
                <div className={clsx('message__avatar', {'my': myMes})}>
-                   <Avatar size={40} url={url}/>
+                   <Avatar url={url && url} size={40} symbol={name.slice(0, 1)}/>
                </div>
                 {
                     content && (
@@ -58,6 +60,9 @@ export const Message: FC<PropsType & MessageType> = memo(({date, content, myMes 
                             }
                         </div>
                     )
+                }
+                {
+                    data && data.sound && <AudiMessage url={data.sound}/>
                 }
             </div>
             <span className={clsx('message__date', {'my': myMes})}>

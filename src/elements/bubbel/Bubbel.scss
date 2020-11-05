@@ -4,10 +4,15 @@
   background: $cBobbleBlue;
   box-shadow: 0 5px 5px rgba($cBobbleBlue, 0.2);
   border-radius: 12px 12px 12px 0;
-  padding: 15px;
+
   width:fit-content;
   color: white;
   align-self: flex-end;
+  overflow: hidden;
+
+  &.padding {
+    padding: 15px;
+  }
 
   &.my {
     order: 2;

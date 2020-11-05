@@ -1,0 +1,61 @@
+.audi-message {
+  user-select: none;
+  position: relative;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 15px;
+  border-radius: 12px 12px 12px 0;
+
+
+  &__progress {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(65,143,255);
+    z-index: 2;
+
+  }
+
+  &__grafic {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__action-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 16px;
+    background-color: rgb(15,57,151);
+    z-index: 3;
+  }
+
+  &__icon-play {
+    svg {
+      margin-left: 2px;
+    }
+  }
+
+  &__time {
+    position: absolute;
+    top: 20px;
+    left: calc(100% - 50px);
+    z-index: 3;
+  }
+
+  audio {
+    display: flex;
+  }
+}

@@ -22,6 +22,7 @@ export const CardUser: FC<PropsType & CardsUserType> = memo(({handlerActive, id,
         <div className={clsx('card-user', {'card-user_active': active})} onClick={() => handlerActive(id)}>
             <div>
                 <Avatar
+                    symbol={name.slice(0, 1)}
                     url={url ? url : ''}
                     size={40}
                     online={online}

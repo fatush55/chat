@@ -14,11 +14,13 @@ export type Img = {
 
 export type DataType = {
     img?: Array<Img>
+    sound?: string
 }
 
 export type MessageType = {
     id: number
-    url: string
+    name: string
+    url?: string
     content?: string
     reading: boolean
     myMes: boolean

@@ -1,6 +1,7 @@
 export const dataMessage = [
     {
         id: 1,
+        name: 'Kosta Zuravel',
         url: 'https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/anthony-brebion.jpg',
         content: 'Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻 Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻 Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻 Салам, Брут! Чё, как, уничтожил флот галлов? 🖐🏻',
         reading: false,
@@ -33,6 +34,7 @@ export const dataMessage = [
     },
     {
         id: 2,
+        name: 'Dima Cheremis',
         url: 'https://www.kinonews.ru/insimgs/2019/newsimg/newsimg87089.jpg',
         content: 'Салам, брат Цезарь! 🖐🏻',
         reading: false,
@@ -69,6 +71,7 @@ export const dataMessage = [
     },
     {
         id: 3,
+        name: 'Dima Cheremis',
         url: 'https://www.kinonews.ru/insimgs/2019/newsimg/newsimg87089.jpg',
         content: 'LL',
         reading: true,
@@ -78,7 +81,7 @@ export const dataMessage = [
     },
     {
         id: 4,
-        url: 'https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/anthony-brebion.jpg',
+        name: 'Kosta Zuravel',
         reading: false,
         myMes: false,
         date: {year: 2020, month: 9, day: 24, hours: 13, minutes: 23, second: 35},
@@ -101,6 +104,17 @@ export const dataMessage = [
                     url: 'https://www.focus2move.com/wp-content/uploads/2020/06/McLaren-GT-2020-800-82.jpg'
                 },
             ],
+        }
+    },
+    {
+        id: 5,
+        name: 'Dima Cheremis',
+        url: 'https://mk0abtastybwtpirqi5t.kinstacdn.com/wp-content/uploads/anthony-brebion.jpg',
+        reading: false,
+        myMes: true,
+        date: {year: 2020, month: 9, day: 24, hours: 13, minutes: 23, second: 35},
+        data: {
+           sound: 'http://soundbible.com/mp3/Eagle-SoundBible.com-838595683.mp3',
         }
     },
 ]
