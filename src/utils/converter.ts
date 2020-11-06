@@ -73,3 +73,10 @@ export const getColorSymbol = (symbol: string) => {
         default: return 'rgb(226,90,6)'
     }
 }
+
+export const getTimer = (second: number) => {
+    const mins = Math.floor(second / 60)
+    const sec = (second % 60).toFixed()
+
+    return `${mins < 10 ? '0' : ''}${mins}:${Number(sec) < 10 ? '0' : ''}${sec}`
+}

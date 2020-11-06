@@ -1,23 +1,33 @@
-// Core
-import {useEffect, useRef, MouseEvent, KeyboardEvent} from "react"
+import { RefObject, useRef, useEffect } from "react"
 
-
-export const useEventListener = (eventName: any, handler: (event: MouseEvent | KeyboardEvent) => void, element = window) => {
-    const savedHandler = useRef<any>()
-
+export const useEventListener = <T extends HTMLElement = HTMLDivElement> (
+    eventName: string,
+    handler: Function,
+    element?: RefObject<T>,
+) => {
+    // Create a ref that stores handler
+    const savedHandler = useRef<Function>()
     useEffect(() => {
-        savedHandler.current = handler
-    }, [handler])
-
-    useEffect(() => {
-        const isSupported = element && element.addEventListener
-
-        if (!isSupported) return
-
-        const eventListener = (event: MouseEvent | KeyboardEvent) => savedHandler.current && savedHandler.current(event)
-
-        element.addEventListener(eventName, eventListener)
-
-        return () => element.removeEventListener(eventName, eventListener)
-    },[eventName, element])
+        // Define the listening target
+        const targetElement: T | Window = element?.current || window
+        if (!(targetElement && targetElement.addEventListener)) {
+            return
+        }
+        // Update saved handler if necessary
+        if (savedHandler.current !== handler) {
+            savedHandler.current = handler
+        }
+        // Create event listener that calls handler function stored in ref
+        const eventListener = (event: Event) => {
+            // eslint-disable-next-line no-extra-boolean-cast
+            if (!!savedHandler?.current) {
+                savedHandler.current(event)
+            }
+        }
+        targetElement.addEventListener(eventName, eventListener)
+        // Remove event listener on cleanup
+        return () => {
+            targetElement.removeEventListener(eventName, eventListener)
+        }
+    }, [eventName, element, handler])
 }

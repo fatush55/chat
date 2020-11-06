@@ -1,5 +1,5 @@
 // Core
-import React, {FC, memo, useRef, useState} from 'react'
+import React, {FC, memo} from 'react'
 // Style
 import './AudiMessage.scss'
 // Hooks
@@ -8,7 +8,10 @@ import {useAudiMessageEf} from './useAudiMessageEf'
 import {Bubbel} from 'elements/bubbel/Bubbel'
 // Assets
 import audiGrafic from 'assets/img/audi-grafic.svg'
-import { PlayCircleOutlined, CaretRightOutlined, PauseOutlined } from '@ant-design/icons'
+// Ant
+import {CaretRightOutlined, PauseOutlined } from '@ant-design/icons'
+// Utils
+import {getTimer} from 'utils/converter'
 
 type PropsType = {
     children?: never
@@ -16,20 +19,10 @@ type PropsType = {
 }
 
 export const AudiMessage: FC<PropsType> = memo(({url}) => {
-    const {} = useAudiMessageEf()
-
-    const audioRef = useRef(null)
-
-    const [mode, setMode] = useState(true)
-
-    const handlerAction = () => {
-        setMode(!mode)
-
-        // @ts-ignore
-        mode && audioRef.current.play()
-    }
-
-
+    const {
+        mode, audioRef, currentTime, progress,
+        handlerAction,
+    } = useAudiMessageEf()
 
     return (
         <Bubbel myMes={false} padding={false} >
@@ -41,10 +34,10 @@ export const AudiMessage: FC<PropsType> = memo(({url}) => {
                </div>
                <img className={'audi-message__grafic'} src={audiGrafic} alt="audi-grafic"/>
                <div className={'audi-message__time'}>
-                   00:00
+                   {getTimer(currentTime)}
                </div>
-               <div className={'audi-message__progress'} style={{width: `10%`}} />
-               <audio ref={audioRef} src={url} preload={'zz'} />
+               <div className={'audi-message__progress'} style={{width: `${progress}%`}} />
+               <audio ref={audioRef} src={url} preload={'audio'} />
            </div>
         </Bubbel>
     )
