@@ -10,6 +10,7 @@ export const useEventListener = <T extends HTMLElement = HTMLDivElement> (
     useEffect(() => {
         // Define the listening target
         const targetElement: T | Window = element?.current || window
+
         if (!(targetElement && targetElement.addEventListener)) {
             return
         }

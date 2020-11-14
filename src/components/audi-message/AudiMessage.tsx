@@ -24,6 +24,8 @@ export const AudiMessage: FC<PropsType> = memo(({url}) => {
         handlerAction,
     } = useAudiMessageEf()
 
+    // console.log(mode)
+
     return (
         <Bubbel myMes={false} padding={false} >
            <div className={'audi-message'}>

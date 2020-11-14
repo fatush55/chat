@@ -20,9 +20,11 @@ export const useAudiMessageEf = () => {
         setMode(false)
     }, audioRef)
 
-    useEventListener('pause', () => {
-        setMode(true)
-    }, audioRef)
+    // useEventListener('pause', () => {
+    //     setMode(true)
+    // }, audioRef)
+
+    audioRef.current && audioRef.current.addEventListener('pause', () => { setMode(true) })
 
     useEventListener('ended', () => {
         setMode(true)
